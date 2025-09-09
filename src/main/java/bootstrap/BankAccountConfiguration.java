@@ -13,4 +13,6 @@ public class BankAccountConfiguration {
     public BankAccountPort bankAccountPort(BankAccountRepository bankAccountRepository) {
         return new BankAccountAdapter(bankAccountRepository);
     }
+
+
 }

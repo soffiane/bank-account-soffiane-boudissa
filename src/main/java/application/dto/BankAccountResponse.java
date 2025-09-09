@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 public class BankAccountResponse {
 
     private Long accountId;
-    private BigDecimal balance;
-    private BigDecimal overdraftAuthorization;
+    private Double balance;
+    private Double overdraftAuthorization;
 
     public Long getAccountId() {
         return accountId;
@@ -16,19 +16,19 @@ public class BankAccountResponse {
         this.accountId = accountId;
     }
 
-    public BigDecimal getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
-    public BigDecimal getOverdraftAuthorization() {
+    public Double getOverdraftAuthorization() {
         return overdraftAuthorization;
     }
 
-    public void setOverdraftAuthorization(BigDecimal overdraftAuthorization) {
+    public void setOverdraftAuthorization(Double overdraftAuthorization) {
         this.overdraftAuthorization = overdraftAuthorization;
     }
 

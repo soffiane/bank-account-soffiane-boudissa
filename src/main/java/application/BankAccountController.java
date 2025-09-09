@@ -60,10 +60,10 @@ public class BankAccountController {
     private BankAccountResponse mapToResponse(BankAccount account) {
         BankAccountResponse response = new BankAccountResponse();
         response.setAccountId(account.getId());
-        response.setBalance(BigDecimal.valueOf(account.getBalance()));
+        response.setBalance(account.getBalance());
         response.setOverdraftAuthorization(
                 account.getOverdraftAuthorization() != null
-                        ? BigDecimal.valueOf(account.getOverdraftAuthorization())
+                        ? account.getOverdraftAuthorization()
                         : null
         );
         return response;
