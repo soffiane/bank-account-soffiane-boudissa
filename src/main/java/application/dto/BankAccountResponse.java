@@ -8,8 +8,6 @@ public class BankAccountResponse {
     private BigDecimal balance;
     private BigDecimal overdraftAuthorization;
 
-
-    // Getters and Setters
     public Long getAccountId() {
         return accountId;
     }

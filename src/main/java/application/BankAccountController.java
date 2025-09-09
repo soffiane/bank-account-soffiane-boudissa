@@ -4,7 +4,6 @@ import application.dto.BankAccountRequest;
 import application.dto.BankAccountResponse;
 import domain.bankaccount.BankAccount;
 import domain.bankaccount.BankAccountPort;
-import domain.bankaccount.BankAccountService;
 import domain.bankaccount.WithdrawException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

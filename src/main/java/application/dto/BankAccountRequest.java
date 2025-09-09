@@ -1,16 +1,13 @@
 package application.dto;
 
-import org.antlr.v4.runtime.misc.NotNull;
+import org.springframework.validation.annotation.Validated;
 
 import java.math.BigDecimal;
 
 public class BankAccountRequest {
 
-    @NotNull(message = "Initial balance is required")
-    @DecimalMin(value = "0.0", message = "Initial balance cannot be negative")
     private BigDecimal initialBalance;
 
-    @DecimalMin(value = "0.0", message = "Overdraft authorization cannot be negative")
     private BigDecimal overdraftAuthorization;
 
     // Getters and Setters
