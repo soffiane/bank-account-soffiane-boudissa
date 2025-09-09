@@ -1,16 +1,11 @@
-package domain.bankaccount;
+package domain.dto;
 
-import jakarta.persistence.*;
+import domain.WithdrawException;
 
-@Entity
 public class BankAccount {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "balance", nullable = false)
     private Double balance;
-    @Column(name = "overdraft_authorization")
     private Double overdraftAuthorization;
 
     public BankAccount() {
@@ -21,6 +16,28 @@ public class BankAccount {
     public BankAccount(Double balance, Double overdraftAuthorization) {
         this.balance = balance;
         this.overdraftAuthorization = overdraftAuthorization;
+    }
+
+    public BankAccount(Long id, Double balance, Double overdraftAuthorization) {
+        this.id = id;
+        this.balance = balance;
+        this.overdraftAuthorization = overdraftAuthorization;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Double getBalance() {
+        return balance;
+    }
+
+    public Double getOverdraftAuthorization() {
+        return overdraftAuthorization;
+    }
+
+    public void setId(long id){
+        this.id = id;
     }
 
     public void deposit(double amount) {
@@ -42,22 +59,10 @@ public class BankAccount {
         }
     }
 
-    private boolean canWithdraw(double amount) {
+    public boolean canWithdraw(double amount) {
         if (overdraftAuthorization != null) {
             return (balance - amount) >= -overdraftAuthorization;
         }
         return amount <= balance;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Double getBalance() {
-        return balance;
-    }
-
-    public Double getOverdraftAuthorization() {
-        return overdraftAuthorization;
     }
 }

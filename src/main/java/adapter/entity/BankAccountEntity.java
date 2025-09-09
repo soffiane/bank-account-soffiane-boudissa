@@ -1,20 +1,17 @@
-package application.dto;
+package adapter.entity;
 
-import java.math.BigDecimal;
+import jakarta.persistence.*;
 
-public class BankAccountResponse {
+@Entity
+public class BankAccountEntity {
 
-    private Long accountId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "balance", nullable = false)
     private Double balance;
+    @Column(name = "overdraft_authorization")
     private Double overdraftAuthorization;
-
-    public Long getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
-    }
 
     public Double getBalance() {
         return balance;
@@ -24,6 +21,14 @@ public class BankAccountResponse {
         this.balance = balance;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Double getOverdraftAuthorization() {
         return overdraftAuthorization;
     }
@@ -31,5 +36,5 @@ public class BankAccountResponse {
     public void setOverdraftAuthorization(Double overdraftAuthorization) {
         this.overdraftAuthorization = overdraftAuthorization;
     }
-
 }
+
